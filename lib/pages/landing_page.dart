@@ -1,5 +1,7 @@
+import 'package:coffee_shop_ui/pages/shop_page.dart';
 import 'package:coffee_shop_ui/utils/constants.dart';
 import 'package:coffee_shop_ui/utils/helper.dart';
+import 'package:coffee_shop_ui/utils/static_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -13,18 +15,18 @@ class LandingPage extends StatelessWidget {
           Positioned(
             top: 0,
             right: -70,
-            child: Image.asset("assets/images/coffee2.png"),
+            child: Image.asset(StaticData.coffee2ImgPath),
           ),
           Positioned(
             bottom: 0,
             left: -70,
-            child: Image.asset("assets/images/coffee.png"),
+            child: Image.asset(StaticData.coffeeImgPath),
           ),
           Positioned(
             bottom: -10,
             right: -70,
             child: Image.asset(
-              "assets/images/coffee_cup.png",
+              StaticData.coffeeCupImgPath,
               width: 250,
             ),
           ),
@@ -59,7 +61,7 @@ class LandingPage extends StatelessWidget {
                     child: FlatButton(
                       padding: EdgeInsets.symmetric(horizontal: 32),
                       onPressed: (){
-                        nextScreen(context, "/shop");
+                        nextScreen(context, ShopPage.pageRoutePath);
                       },
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(28),

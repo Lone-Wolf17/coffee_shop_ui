@@ -1,3 +1,4 @@
+import 'package:coffee_shop_ui/pages/coffee_details_page.dart';
 import 'package:coffee_shop_ui/pages/landing_page.dart';
 import 'package:coffee_shop_ui/pages/shop_page.dart';
 import 'package:coffee_shop_ui/utils/constants.dart';
@@ -36,8 +37,11 @@ Route<dynamic> _onGenerateRoute(RouteSettings settings) {
     case "/":
       routePage = LandingPage();
       break;
-    case "/shop":
+    case ShopPage.pageRoutePath:
       routePage = ShopPage();
+      break;
+    case CoffeeDetailsPage.pageRoutePath:
+      routePage = CoffeeDetailsPage();
       break;
     default:
       routePage = LandingPage();
