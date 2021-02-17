@@ -18,7 +18,8 @@ class CoffeeListing extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           return GestureDetector(
             onTap: () {
-              nextScreen(context, CoffeeDetailsPage.pageRoutePath);
+              nextScreen(context, CoffeeDetailsPage.pageRoutePath,
+                  arguments: StaticData.coffees[index]);
             },
             child: ClipRRect(
               borderRadius: BorderRadius.circular(12),
@@ -62,15 +63,12 @@ class CoffeeListing extends StatelessWidget {
                                 Text(
                                   "\$${StaticData.coffees[index].price.toStringAsFixed(2)}",
                                   style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold
-                                  ),
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold),
                                 ),
                                 GestureDetector(
-                                  onTap: (){},
-                                  child: Icon(
-                                    FlutterIcons.add_circle_mdi
-                                  ),
+                                  onTap: () {},
+                                  child: Icon(FlutterIcons.add_circle_mdi),
                                 )
                               ],
                             ),

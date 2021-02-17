@@ -1,3 +1,4 @@
+import 'package:coffee_shop_ui/models/coffee.dart';
 import 'package:coffee_shop_ui/utils/constants.dart';
 import 'package:coffee_shop_ui/utils/static_data.dart';
 import 'package:flutter/cupertino.dart';
@@ -6,6 +7,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CoffeeDetailsPage extends StatelessWidget {
   static const String pageRoutePath = "/coffee-details";
+
+  final Coffee coffee;
+
+  CoffeeDetailsPage({@required this.coffee});
 
   Widget _doubleColText(String textOne, String textTwo) {
     return Padding(padding: const EdgeInsets.symmetric(vertical: 12), child: Row(
@@ -30,6 +35,7 @@ class CoffeeDetailsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -66,14 +72,12 @@ class CoffeeDetailsPage extends StatelessWidget {
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     fit: BoxFit.cover,
-                    image: AssetImage(
-                      StaticData.product1ImgPath
-                    )
+                    image: coffee.image
                   )
                 ),
               )),
           Positioned(
-              top: 280,
+              top: 265,
               width: MediaQuery.of(context).size.width,
               child: Container(
                 padding: EdgeInsets.symmetric(horizontal: 16, vertical: 24),
@@ -85,12 +89,12 @@ class CoffeeDetailsPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Iced and chilled Coffee",
+                      coffee.description,
                       style: TextStyle(color: kTextColor),
                     ),
                     SizedBox(height: 5),
                     Text(
-                      "Latte with Almond Milk",
+                      coffee.name,
                       style: TextStyle(
                         color: kPrimaryColor,
                         fontWeight: FontWeight.w700,
@@ -111,7 +115,7 @@ class CoffeeDetailsPage extends StatelessWidget {
                     Divider(),
                     _doubleColText("Quantity", "4"),
                     Divider(),
-                    _doubleColText("Amount Payable", "\$10.44 USD"),
+                    _doubleColText("Amount Payable", "\$${coffee.price.toStringAsFixed(2)} USD"),
                     SizedBox(height: 36),
                     Container(
                       width: double.infinity,
