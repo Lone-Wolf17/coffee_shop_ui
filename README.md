@@ -1,16 +1,32 @@
 # coffee_shop_ui
 
+<h1> Coffee Shop UI </h1>
+
 A Coffee Shop App UI Built with Flutter
 
-## Getting Started
+<h2> ** ScreenShots </h2>
 
-This project is a starting point for a Flutter application.
+<h3> Landing Page </h3>
 
-A few resources to get you started if this is your first Flutter project:
+![Landing Page](/screenshots/landing_page.png)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+<br>
+<br>
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<h3> Shop Page </h3>
+
+![Shop Page](/screenshots/shop_page.png)
+
+<br>
+<br>
+
+<h5> Coffee Details Screen 1 </h5>
+
+![Coffee Details Screen 1](/screenshots/coffee_details_page_1.png)
+
+<br>
+<br>
+
+<h5> Coffee Details Screen 2 </h5>
+
+![Coffee Details Screen 2](/screenshots/coffee_details_page_2.png)
